@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../constants/color_constants.dart';
 import '../controller/filter_controller.dart';
 import '../controller/todo_controller.dart';
+import 'component/todo_action_button.dart';
 import 'component/todo_list.dart';
 
 class TodoScreen extends StatelessWidget {
@@ -42,6 +43,25 @@ class TodoScreen extends StatelessWidget {
                 },
               );
             },
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15, left: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ActionButton(
+                  label: 'Reset Todo',
+                  icon: Icons.check_box,
+                  color: Colors.grey,
+                  onPressed: () {
+                    // if (!filterController.hideDone) {
+                    //   // todoController.deleteDone();
+                    // }
+                    todoController.updateAllDone(todoController.todos);
+                  },
+                ),
+              ],
+            ),
           ),
         ],
       ),

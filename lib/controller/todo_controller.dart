@@ -73,6 +73,13 @@ class TodoController extends GetxController {
     _todos.setAll(index, [newTodo]);
   }
 
+  void updateAllDone(List<Todo> todo) {
+    for (int index = 0; index < todo.length; index++) {
+      final newTodo = todo[index].copyWith(done: false);
+      _todos.setAll(index, [newTodo]);
+    }
+  }
+
   void remove(Todo todo) {
     _todos.remove(todo);
   }
