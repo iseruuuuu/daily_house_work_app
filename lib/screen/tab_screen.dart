@@ -35,11 +35,11 @@ class TabScreen extends StatelessWidget {
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.today_outlined),
-                label: 'Todo',
+                label: '家事リスト',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
-                label: 'Setting',
+                label: '設定画面',
               ),
             ],
             type: BottomNavigationBarType.fixed,
