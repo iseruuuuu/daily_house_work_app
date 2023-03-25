@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../model/todo.dart';
+import '../screen/search_image_screen.dart';
 import '../screen/todo_add_screen.dart';
 import '../service/storage_service.dart';
 import 'filter_controller.dart';
@@ -22,6 +24,26 @@ class TodoController extends GetxController {
       final data = todos.map((e) => e.toJson()).toList();
       _storage.save(data);
     });
+    _loadBackgroundImage();
+  }
+
+  _loadBackgroundImage() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String imagePath = prefs.getString('backgroundImage') ??
+        'https://cdn.pixabay.com/photo/2023/03/15/03/46/jeep-7853620_960_720.jpg';
+    backgroundImages.value = imagePath;
+  }
+
+  Future pickImageFromGallery() async {
+    Get.to(() => const SearchImageScreen())?.then((value) {
+      _saveBackgroundImage(value);
+      backgroundImages.value = value;
+    });
+  }
+
+  _saveBackgroundImage(String imagePath) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('backgroundImage', imagePath);
   }
 
   @override

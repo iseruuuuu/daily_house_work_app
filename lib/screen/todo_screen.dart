@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../constants/color_constants.dart';
@@ -33,6 +34,18 @@ class TodoScreen extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           Obx(
+            () => SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Opacity(
+                opacity: 0.5,
+                child: CachedNetworkImage(
+                  imageUrl: todoController.backgroundImages.value,
+                ),
+              ),
+            ),
+          ),
+          Obx(
             () {
               final todos = todoController.todos;
               return ListView.builder(
@@ -54,9 +67,6 @@ class TodoScreen extends StatelessWidget {
                   icon: Icons.check_box,
                   color: Colors.grey,
                   onPressed: () {
-                    // if (!filterController.hideDone) {
-                    //   // todoController.deleteDone();
-                    // }
                     todoController.updateAllDone(todoController.todos);
                   },
                 ),
@@ -65,14 +75,29 @@ class TodoScreen extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        heroTag: null,
-        backgroundColor: ColorConstant.appBarColor,
-        onPressed: todoController.onTapAdd,
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            heroTag: null,
+            backgroundColor: ColorConstant.appBarColor,
+            onPressed: todoController.pickImageFromGallery,
+            child: const Icon(
+              Icons.image,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(width: 30),
+          FloatingActionButton(
+            heroTag: null,
+            backgroundColor: ColorConstant.appBarColor,
+            onPressed: todoController.onTapAdd,
+            child: const Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+          ),
+        ],
       ),
     );
   }
