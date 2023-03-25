@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColorConstant {
-  static Color appBarColor = Colors.lightGreen;
+  static Color appBarColor = Colors.orange;
   static Color backgroundColor = const Color(0xFFF2F2F7);
   static Color settingsListBackground = const Color(0xFFF2F2F7);
   static Color settingsSectionBackground = Colors.white;
