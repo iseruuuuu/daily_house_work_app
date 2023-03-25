@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../constants/color_constants.dart';
 import '../controller/filter_controller.dart';
 import '../controller/todo_controller.dart';
-import 'component/todo_action_button.dart';
 import 'component/todo_list.dart';
 
 class TodoScreen extends StatelessWidget {

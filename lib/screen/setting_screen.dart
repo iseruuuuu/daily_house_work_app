@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:get/get.dart';
 import 'package:settings_ui/settings_ui.dart';
-
 import '../constants/color_constants.dart';
 import '../controller/setting_screen_controller.dart';
 
@@ -71,15 +70,6 @@ class SettingScreen extends StatelessWidget {
                       title: const Text('Github'),
                       onPressed: (context) => controller.onTapGithub(),
                     ),
-                    //TODO アプリURLを差し替える。
-                    // SettingsTile.navigation(
-                    //   leading: Icon(
-                    //     AntDesign.sharealt,
-                    //     color: ColorConstant.black,
-                    //   ),
-                    //   title: const Text('友達に教える'),
-                    //   onPressed: (context) => controller.onTapShare(),
-                    // ),
                     SettingsTile.navigation(
                       title: const Text('バージョン'),
                       trailing: Obx(

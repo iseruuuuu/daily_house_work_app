@@ -1,6 +1,4 @@
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../model/todo.dart';
 import '../screen/todo_add_screen.dart';
 import '../service/storage_service.dart';

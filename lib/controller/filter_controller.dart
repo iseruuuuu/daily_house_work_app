@@ -3,7 +3,6 @@ import '../service/storage_service.dart';
 
 class FilterController extends GetxController {
   final _hideDone = false.obs;
-
   final _storage = FilterStorage();
   late final Worker _worker;
 

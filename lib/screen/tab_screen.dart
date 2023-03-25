@@ -2,7 +2,6 @@ import 'package:daily_house_work_app/screen/setting_screen.dart';
 import 'package:daily_house_work_app/screen/todo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../constants/color_constants.dart';
 import '../controller/tab_screen_controller.dart';
 

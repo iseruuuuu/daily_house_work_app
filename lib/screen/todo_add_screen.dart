@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../constants/color_constants.dart';
 import '../controller/todo_controller.dart';
 import '../model/todo.dart';
