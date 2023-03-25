@@ -24,14 +24,6 @@ class TodoController extends GetxController {
       final data = todos.map((e) => e.toJson()).toList();
       _storage.save(data);
     });
-    _loadBackgroundImage();
-  }
-
-  _loadBackgroundImage() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String imagePath = prefs.getString('backgroundImage') ??
-        'https://cdn.pixabay.com/photo/2023/03/15/03/46/jeep-7853620_960_720.jpg';
-    backgroundImages.value = imagePath;
   }
 
   @override
